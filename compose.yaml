@@ -1,0 +1,14 @@
+services:
+  sshproxy:
+    image: ghcr.io/robertsmits/sshproxy:latest
+    container_name: sshproxy
+    restart: always
+    networks:
+      - bridge
+    ports:
+      - "22:22"
+    environment:
+      SSH_HOST: 192.168.20.11
+      SSH_PORT: 22
+      SSH_USER: ssh_user
+      SSH_PASSWORD: sshh_password
